@@ -1,7 +1,7 @@
 # Meeting note taker API
 
 ## General info
-This API is designed to assist you in transcribing your audio files, such as those from meetings or note-taking during meetings. It leverages Whisper AI to provide transcription services in multiple languages.
+This API is designed to assist you in transcribing your audio files, such as those from meetings or note-taking during meetings. It leverages Whisper AI to provide transcription services in multiple languages. This API is implemented using the Unit of Work design pattern.
 
 ![](tests/media_for_tests/img_readme.png)
 
