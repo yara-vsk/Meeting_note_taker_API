@@ -14,7 +14,7 @@ DEFAULT_CHUNK_SIZE = 1024 * 1024 * 1  # 1 megabyte
 
 class ItemsService:
 
-    async def add_item(self, uow: IUnitOfWork, description: str, audio_file, back_task):
+    async def add_item(self, uow: IUnitOfWork, description: str, audio_file):
         audio_file_name = f'{uuid4()}.' + str(audio_file.filename.split('.')[1])
 
         async with uow:

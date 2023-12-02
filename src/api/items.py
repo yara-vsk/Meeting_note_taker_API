@@ -24,11 +24,10 @@ async def get_items(
 async def add_item(
 
         uow: UOWDep,
-        back_task: BackgroundTasks,
         description: str | None = Body(max_length=1000),
         audio_file=Depends(valid_audio_record),
 ):
-    item = await ItemsService().add_item(uow, description, audio_file, back_task)
+    item = await ItemsService().add_item(uow, description, audio_file)
     return item
 
 

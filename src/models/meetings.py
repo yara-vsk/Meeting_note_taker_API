@@ -14,7 +14,7 @@ class Meeting(Base):
     name: Mapped[str] = mapped_column(String(100), nullable=False)
     user_id: Mapped[int] = mapped_column(ForeignKey('user.id', ondelete="cascade"), nullable=False)
 
-    user: Mapped["User"] = relationship()
+    user: Mapped["User"] = relationship(lazy='joined', passive_deletes=True)
 
     def __repr__(self) -> str:
         return f"Meeting(id={self.id!r})"

@@ -28,8 +28,8 @@ class Item(Base):
     create_date: Mapped[datetime] = mapped_column(insert_default=func.now())
     meeting_id: Mapped[int] = mapped_column(ForeignKey('meeting.id', ondelete="cascade"), nullable=False)
 
-    audio_record: Mapped["AudioRecord"] = relationship(AudioRecord)
-    meeting: Mapped["Meeting"] = relationship(Meeting)
+    audio_record: Mapped["AudioRecord"] = relationship('AudioRecord', lazy='joined', passive_deletes=True)
+    meeting: Mapped["Meeting"] = relationship('Meeting', lazy='joined', passive_deletes=True)
 
     def __repr__(self) -> str:
         return f"Items(id={self.id!r})"
